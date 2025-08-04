@@ -1,68 +1,158 @@
-# JusticeBot
+# Book Companion
 
 ## Overview
-**JusticeBot** is a lightweight legal assistant chatbot built to assist users with queries related to **Indian labor laws**. It takes one or more legal PDFs, breaks them into smaller parts, and uses AI to answer user questions based on that content. It works like a smart search engine with a chat interface, where users can ask questions and get accurate replies. The chatbot is built using modern tools like Streamlit (for the UI), FAISS (to store and search legal info), and advanced AI models from Hugging Face and Together.ai.
-## Features
-Features
-- ✅ Extracts and processes legal text from PDFs.
-- 🧠 Embeds knowledge using Hugging Face sentence transformers.
-- 📦 Stores embeddings locally using FAISS.
-- 🔍 Retrieves the most relevant legal context using semantic similarity.
-- 🤖 Uses a powerful LLM (Mistral 7B) via Together.ai for generating answers.
-- 💬 Interactive chat UI built with Streamlit.
-- ♻️ Maintains conversation context using LangChain's memory.
+**Book Companion** is an intelligent PDF assistant that transforms your documents into an interactive knowledge companion. Built with modern AI technology, it allows you to upload PDF documents and have natural conversations about their content. Whether you're studying textbooks, analyzing research papers, or reviewing legal documents, Book Companion helps you extract insights and answer questions through an intuitive chat interface.
 
-## Setup Instructions
+## ✨ Features
 
-### 1. Clone the Repository and Navigate to Project Directory
-```bash
-git clone https://github.com/HardiDesai02/JusticeBot.git
-cd JusticeBot
+- 📚 **PDF Processing**: Upload and process any PDF document with automatic text extraction
+- 🧠 **AI-Powered Chat**: Natural language conversations about your document content
+- 🔍 **Semantic Search**: Find relevant information using advanced embedding technology
+- 💬 **Conversation Memory**: Maintains context throughout your chat sessions
+- 🎨 **Modern UI**: Beautiful, responsive interface built with Streamlit
+- ⚡ **Fast Retrieval**: Efficient vector search using FAISS
+- 🔄 **Session Management**: Reset conversations and start fresh anytime
+- 📱 **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Streamlit
+- **AI Models**: 
+  - Embeddings: Hugging Face Sentence Transformers
+  - Language Model: Together.ai (Mistral 7B)
+- **Vector Database**: FAISS for efficient similarity search
+- **Text Processing**: LangChain for document processing and conversation management
+- **PDF Processing**: PyPDF2 and PyMuPDF for robust text extraction
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8 or higher
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd Book-Companion
+   ```
+
+2. **Create a virtual environment**
+   ```bash
+   python -m venv venv
+   ```
+
+3. **Activate the virtual environment**
+   ```bash
+   # On Windows
+   venv\Scripts\activate
+   
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
+
+4. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Set up your API key**
+   
+   Get a free API key from [Together.ai](https://api.together.xyz) and update it in `model.py`:
+   ```python
+   together_api_key = "your_api_key_here"
+   ```
+
+6. **Run the application**
+   ```bash
+   streamlit run model.py
+   ```
+
+   The application will open in your browser at `http://localhost:8501`
+
+## 📖 Usage Guide
+
+### Getting Started
+1. **Upload a PDF**: Use the file uploader in the sidebar to upload your document
+2. **Process Document**: Click "Process PDF" to extract and index the content
+3. **Start Chatting**: Ask questions about your document in the chat interface
+4. **Reset Conversation**: Use the "Reset Conversation" button to start fresh
+
+### Example Questions
+- "What are the main topics covered in this document?"
+- "Can you summarize chapter 3?"
+- "What does the document say about [specific topic]?"
+- "Explain the key concepts in the introduction"
+
+## 🔧 Configuration
+
+### API Keys
+The application requires a Together.ai API key for the language model. You can get a free key at [Together.ai](https://api.together.xyz).
+
+### Model Settings
+- **Embedding Model**: `multi-qa-mpnet-base-dot-v1` (Hugging Face)
+- **Language Model**: Mistral 7B (via Together.ai)
+- **Chunk Size**: 512 characters with 64 character overlap
+- **Memory Window**: Maintains conversation context
+
+## 📁 Project Structure
+
 ```
-### 2. Create a Virtual Environment
-```bash
-python -m venv venv
-```
-### 3. Activate the Virtual Environment
-```bash
-venv\Scripts\activate  # On Windows
-# OR
-source venv/bin/activate  # On Linux/macOS
-```
-### 4. Install Required Libraries
-```bash
-pip install -r requirements.txt
+Book Companion/
+├── model.py              # Main Streamlit application
+├── ingest.py             # Document processing script
+├── requirements.txt      # Python dependencies
+├── README.md            # This file
+├── data/                # Document storage
+│   └── Labour Act.pdf   # Example document
+├── vector_db/           # FAISS index storage
+│   ├── index.faiss
+│   └── index.pkl
+└── venv/                # Virtual environment
 ```
 
-## Usage
-### 1. Ingest Text Data
-This step processes legal documents and builds the FAISS index and .pkl file for efficient retrieval.
+## 🎯 Use Cases
 
-```bash
-python ingest.py
-```
-### 2. Run the Streamlit App
-Start the chatbot interface using Streamlit.
-```bash
-streamlit run model.py
-```
-### API Key
-This project uses Together.ai's Mistral-7B model. Replace the placeholder API key in model.py with your own:
-```bash
-together_api_key="your_api_key_here"
-```
-You can obtain a free API key from: https://api.together.xyz
+- **Academic Research**: Analyze research papers and academic documents
+- **Legal Documents**: Review contracts, legal texts, and regulations
+- **Textbooks**: Study and understand complex educational materials
+- **Business Reports**: Extract insights from company documents
+- **Technical Manuals**: Get quick answers from technical documentation
 
-## Use Case
-This chatbot aims to:
-- Help laypersons understand Indian Labour Law quickly.
-- Reduce the time spent browsing dense legal documents.
-- Provide a base prototype for future domain-specific legal bots.
+## 🔮 Future Enhancements
 
-## Future Scope
-JusticeBot is currently focused on Indian labor law but can be extended to cover:
-- Multi-document ingestion.
-- Authentication.
-- Custom UI with Streamlit components.
-- Feedback mechanism for response quality.
+- [ ] Multi-document support
+- [ ] Document comparison features
+- [ ] Export conversation history
+- [ ] Custom embedding models
+- [ ] Advanced search filters
+- [ ] User authentication
+- [ ] Collaborative features
+- [ ] Mobile app version
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit issues, feature requests, or pull requests.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- Built with [Streamlit](https://streamlit.io/) for the web interface
+- Powered by [Together.ai](https://together.ai/) for AI capabilities
+- Uses [Hugging Face](https://huggingface.co/) models for embeddings
+- Vector search powered by [FAISS](https://github.com/facebookresearch/faiss)
+
+---
+
+**Book Companion** - Your intelligent reading assistant powered by AI.
+
+
+
+
+
+
 
