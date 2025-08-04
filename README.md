@@ -135,10 +135,6 @@ Book Companion/
 
 We welcome contributions! Please feel free to submit issues, feature requests, or pull requests.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🙏 Acknowledgments
 
 - Built with [Streamlit](https://streamlit.io/) for the web interface
