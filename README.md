@@ -4,7 +4,7 @@
 **Book Companion** is an intelligent PDF assistant that transforms your documents into an interactive knowledge companion. Built with modern AI technology, it allows you to upload PDF documents and have natural conversations about their content. Whether you're studying textbooks, analyzing research papers, or reviewing legal documents, Book Companion helps you extract insights and answer questions through an intuitive chat interface.
 
 ## ScreenShots
-<img width="1919" height="949" alt="Screenshot 2025-08-04 114201" src="https://github.com/user-attachments/assets/aed91267-b16a-46a6-b748-c210eb793d5e" />
+<img width="1919" height="946" alt="Screenshot 2025-08-04 114201" src="https://github.com/user-attachments/assets/aed91267-b16a-46a6-b748-c210eb793d5e" />
 <img width="1919" height="946" alt="Screenshot 2025-08-04 114840" src="https://github.com/user-attachments/assets/0657f3b3-c94c-441b-90d8-d3a7978f8c26" />
 <img width="1919" height="943" alt="Screenshot 2025-08-04 120227" src="https://github.com/user-attachments/assets/b0caedb7-b181-4ab1-855e-b4f571ebc7e4" />
 
